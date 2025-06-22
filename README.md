@@ -1,21 +1,20 @@
 # 🔥 Firewall Fundamentals Project (Windows & Network Security)
 
+---
+
 ## 1. 🔐 What Is a Firewall?
-
-A firewall is a security system that monitors and controls incoming and outgoing traffic. It allows or blocks connections based on predefined rules.
-
-![image](https://github.com/user-attachments/assets/d0d7da34-7d72-44e0-8f9a-9994882c91b8)
+A firewall is a security system that monitors and controls incoming and outgoing network traffic. It acts like a security guard between your computer/network and the internet. You can allow or block data packets based on security rules.
 
 ---
 
 ## 2. 🧱 Types of Firewalls
 
-- **Stateless Firewall**: Checks each packet individually.
-- **Stateful Inspection Firewall**: Tracks connection state.
-- **Proxy Firewall**: Uses an intermediary server.
-- **Next-Gen Firewall (NGFW)**: Includes app control & threat prevention.
+- **Stateless Firewall**: Only checks packet headers, not state of connection.
+- **Stateful Inspection Firewall**: Tracks the state of connections (more secure).
+- **Proxy Firewall**: Uses an intermediary server to filter traffic.
+- **Next-Generation Firewall (NGFW)**: Includes deep packet inspection, intrusion prevention, and app awareness.
 
-![Screenshot 2025-06-22 130209](https://github.com/user-attachments/assets/5c47bbab-271c-40eb-8cb5-62ab169bacda)
+![Screenshot 2025-06-22 130209](https://github.com/user-attachments/assets/848f94bd-69f0-47cb-8abe-a4fb8bf46c1a)
 
 ---
 
@@ -25,109 +24,107 @@ Traffic flows are filtered based on rules:
 - ✅ **Allowed**: Green arrows
 - ❌ **Blocked**: Red arrows
 
-![Screenshot 2025-06-22 130101](https://github.com/user-attachments/assets/0e63c2e8-d6be-4006-b3eb-0d606e676362)
+![Screenshot 2025-06-22 130101](https://github.com/user-attachments/assets/15d0b6c8-7ce3-49f0-9d60-e6a41fcbdefe)
 
 ---
 
-## 4. ⚙️ Creating a Custom Outbound Rule
+## 4. ✅ Managing Allowed Apps
 
-Go to **Windows Defender Firewall with Advanced Security**, select **Outbound Rules > New Rule** > choose **Custom**.
+You can allow or disallow apps from communicating through the firewall here. For example, you might allow your browser or block a risky app.
 
-<!-- Screenshot 03: Rule Type - Custom -->
-
-Then choose to apply the rule to all programs.
-
-<!-- Screenshot 04: Program - All programs -->
+![Screenshot 2025-06-22 131759](https://github.com/user-attachments/assets/a6540a22-ea1e-4c96-a4b2-de700ccc174f)
 
 ---
 
-## 5. 🚫 Blocking Specific Ports (TCP 80 & 443)
+## 5. 🌐 Firewall Settings Per Network
 
-- **Protocol**: TCP  
-- **Remote Ports**: 80, 443  
-Blocks HTTP/HTTPS traffic.
+You can:
+- Turn firewall **on or off** for each network profile (Private/Public).
+- Block **all incoming connections** on selected profiles.
 
-<!-- Screenshot 05: Protocol & Ports TCP 80, 443 -->
-
-Set the **Scope** to apply to any IP addresses.
-
-<!-- Screenshot 06: Scope - Any IP -->
-
-Set the **Action** to “Block the connection.”
-
-<!-- Screenshot 07: Action - Block the connection -->
-
-Choose to apply the rule to all profiles (Domain, Private, Public).
-
-<!-- Screenshot 08: Profile - All selected -->
-
-Give the rule a name like `Block 80, 443 traffic`.
-
-<!-- Screenshot 09: Rule created successfully (shows rule list) -->
+![Screenshot 2025-06-22 131933](https://github.com/user-attachments/assets/65db35f8-da95-4fc9-b2dd-75e881b54774)
 
 ---
 
-## 6. ✅ Managing Allowed Apps
+## 6. ♻️ Resetting Firewall Settings
 
-Here you control which apps can pass through the firewall.
+Restore all firewall settings to default with one click.
 
-<!-- Screenshot 10: Allowed apps and features -->
-
----
-
-## 7. 🌐 Firewall Settings Per Network
-
-Customize how the firewall behaves on private vs public networks.
-
-<!-- Screenshot 11: Customize network settings -->
+![Screenshot 2025-06-22 132228](https://github.com/user-attachments/assets/b2cb2fec-ba67-41a6-b241-5173e5477747)
 
 ---
 
-## 8. ♻️ Resetting Firewall Settings
+## 7. 🧭 Visual: Windows Firewall Rule Wizard Pages Explained
 
-Easily restore all firewall rules to default.
+This part is to demonstrate how to block outbound traffics from the web server
+I was able to connect to this IP address in the web
+![Screenshot 2025-06-22 132336](https://github.com/user-attachments/assets/8f8f255f-9334-495a-8047-0835ad78cc14)
 
-<!-- Screenshot 12: Restore defaults screen -->
+### Rule Type
+Create custom, program, port, or predefined rules.
 
----
+![Screenshot 2025-06-22 132459](https://github.com/user-attachments/assets/d84feb15-9f28-452c-95c0-644e589df285)
 
-## 9. 🌍 Connection Success vs Blocked
 
-Before the rule was added, the connection worked.
+### Program
+Apply rule to all programs or specify one.
 
-<!-- Screenshot 13: Connected Successfully to 10.10.10.10 -->
+![Screenshot 2025-06-22 132521](https://github.com/user-attachments/assets/f2ebf5aa-cf37-42ce-9958-cebaf37b142a)
 
-After blocking port 80/443, the site becomes unreachable.
+### Protocol and Ports
+Configure TCP/UDP and set specific ports.
 
-<!-- Screenshot 14: Can't reach this page (blocked) -->
+![Screenshot 2025-06-22 132558](https://github.com/user-attachments/assets/d4326b5a-158c-4f50-85ab-86fa5a727396)
 
----
+### Scope
+Select IP ranges the rule applies to.
 
-## 10. 🛠 Firewall Rule Wizard - Full Steps
+![Screenshot 2025-06-22 132646](https://github.com/user-attachments/assets/73d38340-d8a9-41fd-96d0-368204dcb277)
 
-1. **Rule Type** → Custom  
-2. **Program** → All programs  
-3. **Protocol and Ports** → TCP, ports 80 and 443  
-4. **Scope** → Any IP  
-5. **Action** → Block the connection  
-6. **Profile** → Domain, Private, Public  
-7. **Name** → `Block 80, 443 traffic`
+### Action
+Choose to allow or block connections.
 
----
+![Screenshot 2025-06-22 132650](https://github.com/user-attachments/assets/1328c810-be1f-417e-ac54-4fd8f9f843f9)
 
-## 11. 🧠 Why Firewalls Matter
+### Profile
+Decide if the rule applies to Domain, Private, or Public networks.
 
-- 🛡️ Protect against intrusions  
-- 🌐 Control internet access  
-- 🕵️‍♂️ Monitor unauthorized connections  
-- 🔐 Essential for both home and enterprise security
+![Screenshot 2025-06-22 132708](https://github.com/user-attachments/assets/ac122b24-bb91-4508-848f-78fc6f112eef)
 
 ---
 
-## 📷 Screenshot List & Upload Suggestions
+## 8. 🚫 Practical Example: Blocking Specific Ports (TCP/80 & 443)
 
+### Creating the Rule
+Steps:
+1. Open **Windows Defender Firewall with Advanced Security**
+2. Go to **Outbound Rules > New Rule > Custom**
+3. Program: **All programs**
+4. Protocol: **TCP**
+5. Remote Ports: **80, 443**
+6. Action: **Block the connection**
+7. Profile: **All**
+8. Name: `Block 80, 443 traffic`
+
+![Screenshot 2025-06-22 132734](https://github.com/user-attachments/assets/1c47a7d8-db40-4379-b2a9-b6a8118a2a19)
+
+### Result
+Attempting to access a web page now results in a blocked message, confirming the firewall is successfully restricting web traffic.
+
+![Screenshot 2025-06-22 132758](https://github.com/user-attachments/assets/dea63bc3-383b-421e-91e6-2b36332224e5)
 
 ---
 
-✅ **Done by:** *[Your Name]*  
-🧠 *Demonstrating real-world firewall knowledge in Windows environments*
+## 9. 🧠 Why Firewalls Matter
+
+Firewalls:
+- 🛡️ Stop unauthorized access
+- 🕵️‍♂️ Protect against malware and network threats
+- ⚙️ Enforce security rules across applications
+- 🌐 Help manage internet access and compliance
+
+---
+
+**✅ Built by:** *[Your Name]*  
+Demonstrating real-world Windows firewall management skills for IT support and security roles.
+
