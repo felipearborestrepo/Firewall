@@ -1,5 +1,7 @@
 # 🔥 Firewall Fundamentals Project (Windows & Network Security)
 
+![network-firewall-icon-illustration-vector-on-white-background](https://github.com/user-attachments/assets/ea96cf3a-754f-4780-82c3-8f7479ccfc83)
+
 ---
 
 ## 1. 🔐 What Is a Firewall?
@@ -57,7 +59,7 @@ Restore all firewall settings to default with one click.
 ## 7. 🧭 Visual: Windows Firewall Rule Wizard Pages Explained
 
 This part is to demonstrate how to block outbound traffics from the web server
-I was able to connect to this IP address in the web
+- I was able to connect to this IP address in the web
 ![Screenshot 2025-06-22 132336](https://github.com/user-attachments/assets/8f8f255f-9334-495a-8047-0835ad78cc14)
 
 ### Rule Type
@@ -125,6 +127,4 @@ Firewalls:
 
 ---
 
-**✅ Built by:** *[Your Name]*  
-Demonstrating real-world Windows firewall management skills for IT support and security roles.
-
+**✅ Built by:** *[Felipe Restrepo]*  
