@@ -59,7 +59,7 @@ Restore all firewall settings to default with one click.
 ## 7. 🧭 Visual: Windows Firewall Rule Wizard Pages Explained
 
 This part is to demonstrate how to block outbound traffics from the web server
-- I was able to connect to this IP address in the web
+- I was able to connect to this IP address in the web = http://10.10.10.10/
 ![Screenshot 2025-06-22 132336](https://github.com/user-attachments/assets/8f8f255f-9334-495a-8047-0835ad78cc14)
 
 ### Rule Type
@@ -112,7 +112,7 @@ Steps:
 
 ### Result
 Attempting to access a web page now results in a blocked message, confirming the firewall is successfully restricting web traffic.
-
+- Blocked message showing, trying to access again = http://10.10.10.10/
 ![Screenshot 2025-06-22 132758](https://github.com/user-attachments/assets/dea63bc3-383b-421e-91e6-2b36332224e5)
 
 ---
